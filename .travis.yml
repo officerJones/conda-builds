@@ -26,6 +26,6 @@ before_deploy:
 
 deploy:
   provider: releases
-  api_key: "GITHUB OAUTH TOKEN"
+  api_key: ${GITHUB_OAUTH_TOKEN}
   file: meta.yaml
   skip_cleanup: true

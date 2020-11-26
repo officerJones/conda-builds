@@ -7,6 +7,7 @@ install:
   - source "$HOME/miniconda/etc/profile.d/conda.sh"
   - hash -r
   - conda config --set always_yes yes --set changeps1 no
+  - conda config --append channels conda-forge
   - conda update -q conda
 
   # Setup environment

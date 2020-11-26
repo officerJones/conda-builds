@@ -22,7 +22,7 @@ script:
   # 1. Create the conda skeleton
   # - conda skeleton pypi simpletransformers
   # 2. Run the conda-build
-  - cd simpletransformers
+  - cd /home/travis/build/officerJones/conda-builds/simpletransformers
   - conda-build simpletransformers --python=3.6
   - ls -l /home/travis/miniconda/envs/test-environment/conda-bld
   # 3. Create packages for multiple platforms

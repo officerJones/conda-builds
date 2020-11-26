@@ -1,6 +1,6 @@
 language: python
 python:
-  - "3.8"
+  - "3.6"
 install:
   - wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh;
   - bash miniconda.sh -b -p $HOME/miniconda
@@ -11,7 +11,8 @@ install:
   - conda update -q conda
 
   # Setup environment
-  - conda create -q -n test-environment python=$TRAVIS_PYTHON_VERSION pip conda-build tokenizers tensorboardx seqeval transformers>=3.0.2 streamlit wandb
+  - conda create -q -n test-environment python=$TRAVIS_PYTHON_VERSION pip conda-build
+  # tokenizers tensorboardx seqeval transformers>=3.0.2 streamlit wandb
   - conda activate test-environment
 
   # Print info

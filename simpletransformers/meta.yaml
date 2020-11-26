@@ -1,0 +1,81 @@
+{% set name = "simpletransformers" %}
+{% set version = "0.49.5" %}
+
+package:
+  name: "{{ name|lower }}"
+  version: "{{ version }}"
+
+source:
+  url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
+  sha256: f7576d50de751d3f9889350f6d88843dd486555aeda72e6cb0318962e75a83ac
+
+build:
+  number: 0
+  script: "{{ PYTHON }} -m pip install . -vv"
+
+requirements:
+  host:
+    - numpy
+    - pandas
+    - pip
+    - python
+    - regex
+    - requests
+    - scikit-learn
+    - scipy
+    - seqeval
+    - streamlit
+    - tensorboardx
+    - tokenizers
+    - tqdm >=4.47.0
+    - transformers >=3.0.2
+    - wandb
+  run:
+    - numpy
+    - pandas
+    - python
+    - regex
+    - requests
+    - scikit-learn
+    - scipy
+    - seqeval
+    - streamlit
+    - tensorboardx
+    - tokenizers
+    - tqdm >=4.47.0
+    - transformers >=3.0.2
+    - wandb
+
+#test:
+#  imports:
+#    - simpletransformers
+#    - simpletransformers.classification
+#    - simpletransformers.classification.transformer_models
+#    - simpletransformers.config
+#    - simpletransformers.conv_ai
+#    - simpletransformers.custom_models
+#    - simpletransformers.experimental
+#    - simpletransformers.experimental.classification
+#    - simpletransformers.experimental.classification.transformer_models
+#    - simpletransformers.language_generation
+#    - simpletransformers.language_modeling
+#    - simpletransformers.language_representation
+#    - simpletransformers.language_representation.transformer_models
+#    - simpletransformers.ner
+#    - simpletransformers.question_answering
+#    - simpletransformers.seq2seq
+#    - simpletransformers.streamlit
+#    - simpletransformers.t5
+
+about:
+  home: "https://github.com/ThilinaRajapakse/simpletransformers/"
+  license: Apache Software
+  license_family: APACHE
+  license_file: 
+  summary: "An easy-to-use wrapper library for the Transformers library."
+  doc_url: 
+  dev_url: 
+
+extra:
+  recipe-maintainers:
+    - your-github-id-here

@@ -35,7 +35,9 @@ deploy:
   api_key: ${GITHUB_OAUTH_TOKEN}
   file_glob: true
   file:
-    - meta.yaml
+    - /home/travis/miniconda/envs/test-environment/conda-bld/linux-64/meta.yaml
+    - /home/travis/miniconda/envs/test-environment/conda-bld/*
+    
     #- /home/travis/miniconda/envs/test-environment/conda-bld/*/*.tar.bz2
   skip_cleanup: true
   on:

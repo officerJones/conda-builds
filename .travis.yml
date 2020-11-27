@@ -22,8 +22,8 @@ script:
   # 1. Create the conda skeleton
   # - conda skeleton pypi simpletransformers
   # 2. Run the conda-build
-  - ls -l
-  - conda-build simpletransformers --python=3.6
+  #- conda-build simpletransformers --python=3.6
+  - conda-build simpletransformers
   # 3. Create packages for multiple platforms
   # - conda convert --platform all /home/travis/miniconda/envs/test-environment/conda-bld/linux-64/click-7.0-py37_0.tar.bz2 -o /home/travis/miniconda/envs/test-environment/conda-bld/all/
 

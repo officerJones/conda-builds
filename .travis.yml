@@ -20,10 +20,10 @@ install:
 
 script:
   # 1. Create the conda skeleton
-  # - conda skeleton pypi simpletransformers
+  - conda skeleton pypi simpletransformers
   # 2. Run the conda-build
-  #- conda-build simpletransformers --python=3.6
-  - conda-build simpletransformers
+  ##- conda-build simpletransformers --python=3.6
+  #- conda-build simpletransformers
   # 3. Create packages for multiple platforms
   # - conda convert --platform all /home/travis/miniconda/envs/test-environment/conda-bld/linux-64/click-7.0-py37_0.tar.bz2 -o /home/travis/miniconda/envs/test-environment/conda-bld/all/
 
@@ -40,8 +40,10 @@ deploy:
   api_key: ${GITHUB_OAUTH_TOKEN}
   file_glob: true
   file:
-    #- simpletransformers/*
-    - /home/travis/miniconda/envs/test-environment/conda-bld/*/*
+    # For conda recipe:
+    - simpletransformers/*
+    # In case of package:
+    #- /home/travis/miniconda/envs/test-environment/conda-bld/*/*
   skip_cleanup: true
   on:
     all_branches: true

@@ -51,26 +51,26 @@ requirements:
     - wandb
     - pytorch
     - dataclasses
-test:
-  imports:
-    - simpletransformers
-    - simpletransformers.classification
-    - simpletransformers.classification.transformer_models
-    - simpletransformers.config
-    - simpletransformers.conv_ai
-    - simpletransformers.custom_models
-    - simpletransformers.experimental
-    - simpletransformers.experimental.classification
-    - simpletransformers.experimental.classification.transformer_models
-    - simpletransformers.language_generation
-    - simpletransformers.language_modeling
-    - simpletransformers.language_representation
-    - simpletransformers.language_representation.transformer_models
-    - simpletransformers.ner
-    - simpletransformers.question_answering
-    - simpletransformers.seq2seq
-    - simpletransformers.streamlit
-    - simpletransformers.t5
+#test:
+  #imports:
+    #- simpletransformers
+    #- simpletransformers.classification
+    #- simpletransformers.classification.transformer_models
+    #- simpletransformers.config
+    #- simpletransformers.conv_ai
+    #- simpletransformers.custom_models
+    #- simpletransformers.experimental
+    #- simpletransformers.experimental.classification
+    #- simpletransformers.experimental.classification.transformer_models
+    #- simpletransformers.language_generation
+    #- simpletransformers.language_modeling
+    #- simpletransformers.language_representation
+    #- simpletransformers.language_representation.transformer_models
+    #- simpletransformers.ner
+    #- simpletransformers.question_answering
+    #- simpletransformers.seq2seq
+    #- simpletransformers.streamlit
+    "- simpletransformers.t5
 
 about:
   home: "https://github.com/ThilinaRajapakse/simpletransformers/"

@@ -70,7 +70,7 @@ requirements:
     #- simpletransformers.question_answering
     #- simpletransformers.seq2seq
     #- simpletransformers.streamlit
-    "- simpletransformers.t5
+    #- simpletransformers.t5
 
 about:
   home: "https://github.com/ThilinaRajapakse/simpletransformers/"

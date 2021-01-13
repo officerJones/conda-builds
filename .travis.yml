@@ -22,9 +22,9 @@ install:
 
 script:
   # 0. Clean WS
-  - rm -rf simpletransformers/
+  #- rm -rf simpletransformers/
   # 1. Create the conda skeleton
-  - conda skeleton pypi simpletransformers
+  #- conda skeleton pypi simpletransformers
   # 2. Run the conda-build
   ##- conda-build simpletransformers --python=3.6
   - conda-build simpletransformers

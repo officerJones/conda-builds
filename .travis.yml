@@ -11,9 +11,11 @@ install:
   - conda update -q conda
 
   # Setup environment
-  - conda create -q -n test-environment python=$TRAVIS_PYTHON_VERSION pip conda-build
+  - conda create -q -n test-environment python=$TRAVIS_PYTHON_VERSION pip
   # tokenizers tensorboardx seqeval transformers>=3.0.2 streamlit wandb
   - conda activate test-environment
+  # Fixed to 3.20.5 as this version worked
+  - conda install conda-build=3.20.5
 
   # Print info
   - conda info -a
@@ -34,8 +36,7 @@ before_deploy:
   - git config --local user.email "officerJones013@gmail.com"
   - export TRAVIS_TAG=${TRAVIS_TAG:-$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)}
   - ls $TRAVIS_TAG
-  - git tag 20210112
-  #- git tag $TRAVIS_TAG
+  - git tag $TRAVIS_TAG
 
 deploy:
   provider: releases

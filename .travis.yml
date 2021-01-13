@@ -21,6 +21,10 @@ install:
   - conda info -a
 
 script:
+  # 0. check
+  - ls -l
+  - rm -rf simpletransformers/
+  - ls -l
   # 1. Create the conda skeleton
   - conda skeleton pypi simpletransformers
   # 2. Run the conda-build

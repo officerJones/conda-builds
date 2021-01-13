@@ -16,20 +16,18 @@ install:
   - conda activate test-environment
   # Fixed to 3.20.5 as this version worked
   - conda install conda-build=3.20.5
-
   # Print info
   - conda info -a
+  - conda list
 
 script:
-  # 0. check
-  - ls -l
+  # 0. Clean WS
   - rm -rf simpletransformers/
-  - ls -l
   # 1. Create the conda skeleton
   - conda skeleton pypi simpletransformers
   # 2. Run the conda-build
   ##- conda-build simpletransformers --python=3.6
-  #- conda-build simpletransformers
+  - conda-build simpletransformers
   # 3. Create packages for multiple platforms
   # - conda convert --platform all /home/travis/miniconda/envs/test-environment/conda-bld/linux-64/click-7.0-py37_0.tar.bz2 -o /home/travis/miniconda/envs/test-environment/conda-bld/all/
 
@@ -49,7 +47,7 @@ deploy:
     # For conda recipe:
     - simpletransformers/*
     # In case of package:
-    #- /home/travis/miniconda/envs/test-environment/conda-bld/*/*
+    - /home/travis/miniconda/envs/test-environment/conda-bld/*/*
   skip_cleanup: true
   on:
     all_branches: true

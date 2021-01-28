@@ -30,14 +30,15 @@ script:
   - conda-build simpletransformers
   # 3. Create packages for multiple platforms
   # - conda convert --platform all /home/travis/miniconda/envs/test-environment/conda-bld/linux-64/click-7.0-py37_0.tar.bz2 -o /home/travis/miniconda/envs/test-environment/conda-bld/all/
-
+  # Check build output
+  - ls -l /home/travis/miniconda/envs/test-environment/conda-bld
   
 before_deploy:
   # Set up git user name and tag this commit
   - git config --local user.name "officerJones"
   - git config --local user.email "officerJones013@gmail.com"
   - export TRAVIS_TAG=${TRAVIS_TAG:-$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)}
-  #- git tag $TRAVIS_TAG
+  - git tag $TRAVIS_TAG
   #- git tag 202001281400-stfr
 
 deploy:

@@ -22,7 +22,7 @@ install:
 
 script:
   # 0. Clean WS
-  - rm -rf simpletransformers/
+  #- rm -rf simpletransformers/
   # 1. Create the conda skeleton
   #- conda skeleton pypi --version 0.49.5 simpletransformers
   # 2. Run the conda-build
@@ -38,7 +38,7 @@ before_deploy:
   - git config --local user.email "officerJones013@gmail.com"
   - export TRAVIS_TAG=${TRAVIS_TAG:-$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)}
   #- git tag $TRAVIS_TAG
-  - git tag 202001281400-stfr
+  #- git tag 202001281400-stfr
 
 deploy:
   provider: releases

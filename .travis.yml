@@ -22,9 +22,9 @@ install:
 
 script:
   # 0. Clean WS
-  #- rm -rf simpletransformers/
+  - rm -rf simpletransformers/
   # 1. Create the conda skeleton
-  #- conda skeleton pypi --version 0.49.5 simpletransformers
+  - conda skeleton pypi --version 0.49.5 simpletransformers
   # 2. Run the conda-build
   ##- conda-build simpletransformers --python=3.6
   - conda-build simpletransformers
@@ -47,7 +47,7 @@ deploy:
   file_glob: true
   file:
     # For conda recipe:
-    #- simpletransformers/*
+    - simpletransformers/*
     # In case of package:
     - /home/travis/miniconda/envs/test-environment/conda-bld/*/*
   skip_cleanup: true

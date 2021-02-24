@@ -21,17 +21,19 @@ install:
   - conda list
 
 script:
-  # 0. Clean WS
-  #- rm -rf simpletransformers/
-  # 1. Create the conda skeleton
-  #- conda skeleton pypi --version 0.49.5 simpletransformers
-  # 2. Run the conda-build
-  ##- conda-build simpletransformers --python=3.6
-  - conda-build simpletransformers
-  # 3. Create packages for multiple platforms
-  # - conda convert --platform all /home/travis/miniconda/envs/test-environment/conda-bld/linux-64/click-7.0-py37_0.tar.bz2 -o /home/travis/miniconda/envs/test-environment/conda-bld/all/
-  # Check build output
-  - ls -l /home/travis/miniconda/envs/test-environment/conda-bld
+#   # 0. Clean WS
+#   #- rm -rf simpletransformers/
+#   # 1. Create the conda skeleton
+#   #- conda skeleton pypi --version 0.49.5 simpletransformers
+#   # 2. Run the conda-build
+#   ##- conda-build simpletransformers --python=3.6
+#   - conda-build simpletransformers
+#   # 3. Create packages for multiple platforms
+#   # - conda convert --platform all /home/travis/miniconda/envs/test-environment/conda-bld/linux-64/click-7.0-py37_0.tar.bz2 -o /home/travis/miniconda/envs/test-environment/conda-bld/all/
+#   # Check build output
+#   - ls -l /home/travis/miniconda/envs/test-environment/conda-bld
+ - conda skeleton neo4j
+ - conda-build neo4j
   
 before_deploy:
   # Set up git user name and tag this commit
@@ -39,17 +41,19 @@ before_deploy:
   - git config --local user.email "officerJones013@gmail.com"
   - export TRAVIS_TAG=${TRAVIS_TAG:-$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)}
   #- git tag $TRAVIS_TAG
-  - git tag 202001290900-stfr
+  - git tag 202102241100-stfr
 
 deploy:
   provider: releases
   api_key: ${GITHUB_OAUTH_TOKEN}
   file_glob: true
   file:
-    # For conda recipe:
-    #- simpletransformers/*
-    # In case of package:
-    - /home/travis/miniconda/envs/test-environment/conda-bld/*/*
+#     # For conda recipe:
+#     #- simpletransformers/*
+#     # In case of package:
+#     - /home/travis/miniconda/envs/test-environment/conda-bld/*/*
+   - neo4j/*
+   - /home/travis/miniconda/envs/test-environment/conda-bld/*/*
   skip_cleanup: true
   on:
     all_branches: true

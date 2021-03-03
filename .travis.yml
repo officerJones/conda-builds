@@ -32,8 +32,8 @@ script:
 #   # - conda convert --platform all /home/travis/miniconda/envs/test-environment/conda-bld/linux-64/click-7.0-py37_0.tar.bz2 -o /home/travis/miniconda/envs/test-environment/conda-bld/all/
 #   # Check build output
 #   - ls -l /home/travis/miniconda/envs/test-environment/conda-bld
- - conda skeleton pypi neo4j
- - conda-build neo4j
+ - conda skeleton pypi polyfuzz
+ - conda-build polyfuzz
   
 before_deploy:
   # Set up git user name and tag this commit
@@ -41,7 +41,7 @@ before_deploy:
   - git config --local user.email "officerJones013@gmail.com"
   - export TRAVIS_TAG=${TRAVIS_TAG:-$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)}
   #- git tag $TRAVIS_TAG
-  - git tag 202102241100-stfr
+  - git tag 202103031300-stfr
 
 deploy:
   provider: releases
@@ -52,7 +52,7 @@ deploy:
 #     #- simpletransformers/*
 #     # In case of package:
 #     - /home/travis/miniconda/envs/test-environment/conda-bld/*/*
-   - neo4j/*
+   - polyfuzz/*
    - /home/travis/miniconda/envs/test-environment/conda-bld/*/*
   skip_cleanup: true
   on:

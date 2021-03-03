@@ -33,7 +33,7 @@ script:
 #   # Check build output
 #   - ls -l /home/travis/miniconda/envs/test-environment/conda-bld
  - conda skeleton pypi polyfuzz
- - conda-build polyfuzz
+ #- conda-build polyfuzz
   
 before_deploy:
   # Set up git user name and tag this commit
@@ -53,7 +53,7 @@ deploy:
 #     # In case of package:
 #     - /home/travis/miniconda/envs/test-environment/conda-bld/*/*
    - polyfuzz/*
-   - /home/travis/miniconda/envs/test-environment/conda-bld/*/*
+   #- /home/travis/miniconda/envs/test-environment/conda-bld/*/*
   skip_cleanup: true
   on:
     all_branches: true

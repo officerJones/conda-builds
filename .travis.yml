@@ -32,7 +32,7 @@ script:
 #   # - conda convert --platform all /home/travis/miniconda/envs/test-environment/conda-bld/linux-64/click-7.0-py37_0.tar.bz2 -o /home/travis/miniconda/envs/test-environment/conda-bld/all/
 #   # Check build output
 #   - ls -l /home/travis/miniconda/envs/test-environment/conda-bld
- #- conda skeleton pypi polyfuzz
+ - conda skeleton pypi polyfuzz --noarch-python
  - conda-build polyfuzz
   
 before_deploy:
@@ -41,7 +41,7 @@ before_deploy:
   - git config --local user.email "officerJones013@gmail.com"
   - export TRAVIS_TAG=${TRAVIS_TAG:-$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)}
   #- git tag $TRAVIS_TAG
-  - git tag 202103031400-polyfuzz
+  - git tag 202103031401-polyfuzz
 
 deploy:
   provider: releases
